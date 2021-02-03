@@ -1,0 +1,36 @@
+# VSPreview storage for C:\Users\Joel\AppData\Roaming\mpv\vs\simulcast.vpy
+!MainWindow
+timeline_mode: time
+toolbars: !Toolbars
+    benchmark: {}
+    debug: {}
+    main:
+        current_output_index: 0
+        outputs: !Outputs
+            '0': !Output
+                frame_to_show: null
+                last_showed_frame: !Frame
+                    value: 11853
+                name: Output 0
+                play_fps: 23.976023976023978
+    misc:
+        autosave_enabled: true
+        save_file_name_template: '{script_name}_{frame}'
+        show_debug: false
+    pipette: {}
+    playback:
+        seek_interval_frame: !FrameInterval
+            value: 1
+    scening:
+        current_list_index: -1
+        first_frame: null
+        label: ''
+        lists: !SceningLists
+            items: []
+        scening_export_template: ({start},{end}),
+        second_frame: null
+window_geometry: !!binary |
+    AdnQywADAAAAAAGQAAAAAAAAB0cAAAL2AAABkQAAACYAAAdGAAAC9QAAAAAAAAAAB4AAAAGRAAAA
+    JgAAB0YAAAL1
+window_state: !!binary |
+    AAAA/wAAAAD9AAAAAAAABbYAAAK3AAAABAAAAAQAAAAIAAAACPwAAAAA
