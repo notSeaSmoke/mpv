@@ -1,0 +1,8 @@
+scripts/shared/
+watch_later/
+cookies2.txt
+*.db
+
+# Custom ignores (because fuck are they annoying)
+scripts/shared/sponsorblock.py
+scripts/shared/sponsorblock.txt
