@@ -8,7 +8,6 @@ from vsutil import depth, get_depth, join, plane, scale_value
 
 core = vs.core
 
-
 """
     Generic debanding with detail masking script.
     Requires VapourSynth <http://www.vapoursynth.com/doc/about.html>
