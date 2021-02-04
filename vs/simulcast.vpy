@@ -10,7 +10,9 @@ core = vs.core
 
 """
     Generic debanding with detail masking script.
+
     Requires VapourSynth <http://www.vapoursynth.com/doc/about.html>
+
     Additional dependencies:
         * lvsfunc <https://github.com/Irrational-Encoding-Wizardry/lvsfunc>
         * vs-placebo <https://github.com/Lypheo/vs-placebo>
@@ -25,10 +27,12 @@ def generate_detail_mask(clip: vs.VideoNode,
     """
         Generates a detail mask.
         If a float value is passed, it'll be scaled to the clip's bitdepth.
+
         :param clip:        Input clip
         :param brz_a:       Binarizing for the detail mask
         :param brz_b:       Binarizing for the edge mask
         :param kwargs:      Additional parameters passed to lvf.denoise.detail_mask
+
         :return:            Detail mask
     """
     return lvf.denoise.detail_mask(clip, brz_a, brz_b, **kwargs)
@@ -41,13 +45,17 @@ def debander(clip: vs.VideoNode,
         A quick 'n dirty generic debanding function.
         To be more specific, it would appear that it's faster to
         deband every plane separately (don't ask me why).
+
         To abuse this, we split up the clip into planes beforehand,
         and then join them back together again at the end.
+
         Although the vast, vast majority of video will be YUV,
         a sanity check for plane amount is done as well, just to be safe.
+
         :param clip:        Input clip
         :param luma_grain:  Grain added to the luma plane
         :param kwargs:        Additional parameters passed to placebo.Deband
+
         :return:            Debanded clip
     """
     if clip.format.num_planes == 0:
@@ -69,6 +77,4 @@ video_in = depth(video_in, 16)
 detail_mask = generate_detail_mask(video_in, brz_a=0.045, brz_b=0.06)
 deband = debander(video_in, luma_grain=4.0, **deband_args)
 deband = core.std.MaskedMerge(deband, video_in, detail_mask)
-
-final = depth(deband, 8)
-final.set_output()
+depth(deband, 8).set_output()
